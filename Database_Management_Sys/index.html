@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>DataBase Management System</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline class="vid-back">
+        <source src="back_vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <main class="content">
+        <header class="page-header">
+            <div>
+                <h1>Database Management System</h1>
+            </div>
+        </header>
+
+        <section class="table" aria-labelledby="records-title">
+            <div class="heading">
+                <div>
+                    <h2 id="records-title">Student records</h2>
+                </div>
+            </div>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr no.</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Branch</th>
+                            <th>Rollno</th>
+                        </tr>
+                    </thead>
+                    <tbody id="records-body">
+                    <tr>
+                        <td>01</td>
+                        <td>Alex Morgan</td>
+                        <td>BCA</td>
+                        <td>Computer Science</td>
+                        <td>CS-1042</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Priya Sharma</td>
+                        <td>BBA</td>
+                        <td>Management</td>
+                        <td>MG-2088</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Jordan Lee</td>
+                        <td>BCA</td>
+                        <td>Information Tech</td>
+                        <td>IT-1136</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Sam Wilson</td>
+                        <td>MCA</td>
+                        <td>Software Systems</td>
+                        <td>SS-3015</td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>Maya Patel</td>
+                        <td>BSc</td>
+                        <td>Data Science</td>
+                        <td>DS-1640</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="operations" aria-labelledby="operations-title">
+            <div class="operations-heading">
+                <h2 id="operations-title">CRUD operations</h2>
+            </div>
+
+            <div class="operation-grid">
+                <form class="operation-card create" action="insert">
+                    <div>
+                        <h3>Create</h3>
+                        <p>Add a new student record</p>
+                    </div>
+                    <button class="sub-but1" type="submit">Insert record
+                    </button>
+                </form>
+
+                <form class="operation-card update" action="update">
+                    <div>
+                        <h3>Update</h3>
+                        <p>Edit an existing record</p>
+                    </div>
+                    <button class="sub-but2" type="submit">Update record</button>
+                </form>
+
+                <form class="operation-card retrieve" action="retrieve">
+                    <div>
+                        <h3>Retrieve</h3>
+                        <p>Find a student record</p>
+                    </div>
+                    <button class="sub-but3" type="submit">Retrieve data </button>
+                </form>
+
+                <form class="operation-card " action="delete">
+                    <div>
+                        <h3>Delete</h3>
+                        <p>Remove a student record</p>
+                    </div>
+                    <button class="sub-but4" type="submit">Delete record</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <dialog class="record-dialog" id="record-dialog">
+        <form method="dialog" class="dialog-form" id="record-form">
+            <button class="close-dialog" type="submit" formnovalidate aria-label="Close dialog">×</button>
+            <p class="dialog-kicker" id="dialog-kicker">Create record</p>
+            <h2 id="dialog-title">Add student</h2>
+            <p class="dialog-description" id="dialog-description">Enter the details for a new student.</p>
+
+            <div class="form-fields" id="form-fields">
+                <label>Sr no.<input name="srno" type="number" min="1"></label>
+                <label>Name<input name="name" type="text" required></label>
+                <label>Course<input name="course" type="text" required></label>
+                <label>Branch<input name="branch" type="text" required></label>
+                <label>Rollno<input name="rollno" type="text" placeholder="Auto-generated if left empty"></label>
+            </div>
+
+            <div class="dialog-actions">
+                <button class="cancel-button" value="cancel" type="submit" formnovalidate>Cancel</button>
+                <button class="confirm-button" id="confirm-button" value="default" type="submit">Save record</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
